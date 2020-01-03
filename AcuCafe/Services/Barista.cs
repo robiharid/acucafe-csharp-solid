@@ -18,7 +18,7 @@ namespace AcuCafe
         }
         public Drink OrderDrink(DrinkType drinkType, List<Topping> toppings)
         {
-            _drinkBuilder.init();
+            _drinkBuilder.Init();
             // REMOVE _drinkBuilder = new DrinkBuilder();
             _drinkBuilder.SetType(drinkType);
 

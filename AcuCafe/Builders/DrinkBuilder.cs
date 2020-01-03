@@ -7,7 +7,7 @@ namespace AcuCafe.Drinks
         void SetType(DrinkType type);
         void AddTopping(Topping topping);
         Drink Build();
-        void init();
+        void Init();
     }
 
     public class DrinkBuilder : IDrinkBuilder
@@ -23,7 +23,7 @@ namespace AcuCafe.Drinks
         }
 
         // neccessary to reset DrinkBuilder if using DI to allow for tests
-        public void init() 
+        public void Init() 
         {
             _cost = 0;
             _toppings = new List<Topping>();
