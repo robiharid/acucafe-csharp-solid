@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcuCafe.cs" />
-    <Compile Include="Barista.cs" />
+    <Compile Include="Services\Barista.cs" />
     <Compile Include="Drinks\Drink.cs" />
     <Compile Include="Builders\DrinkBuilder.cs" />
     <Compile Include="Drinks\DrinkType.cs" />
