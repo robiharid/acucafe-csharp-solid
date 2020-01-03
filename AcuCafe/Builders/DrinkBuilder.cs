@@ -2,6 +2,12 @@
 
 namespace AcuCafe.Drinks
 {
+    interface IDrinkBuilder
+    {
+        void SetType(DrinkType type);
+        void AddTopping(Topping topping);
+    }
+
     public class DrinkBuilder : IDrinkBuilder
     {
         private double _cost;
