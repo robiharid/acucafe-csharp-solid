@@ -1,129 +1,39 @@
-﻿using System;
+﻿using AcuCafe.Drinks;
+using System;
+using System.Collections.Generic;
 
 namespace AcuCafe
 {
     public class AcuCafe
     {
-        public static Drink OrderDrink(string type, bool hasMilk, bool hasSugar)
+        public static void Main(string[] args)
         {
-            Drink drink = new Drink();
-            if (type == "Expresso")
-            {
-                drink = new Expresso();
-            }
-            else if (type == "HotTea")
-                drink = new Tea();
-            else if (type == "IceTea")
-                drink = new IceTea();
+            // needs to consider if Type/Topping price changes i.e. tea becomes 2.0
+            // might want to mislabel a customers name later on
 
-            try
-            {
-                drink.HasMilk = hasMilk;
-                drink.HasSugar = hasSugar;
-                drink.Prepare(type);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("We are unable to prepare your drink.");
-                System.IO.File.WriteAllText(@"c:\Error.txt", ex.ToString());
-            }
+            // would have typed Toppings and Drinks as Enum but we need to have flexibility adding and  
+            // removing, stringly typed it is
 
-            return drink;
-        }
-    }
+            // would also wrap statements in tryc / finally or using blocks and add exception handling
+            Barista helen = new Barista();
+            var tea = new DrinkType("Tea", 1.5);
 
-    public class Drink
-    {
-        public const double MilkCost = 0.5;
-        public const double SugarCost = 0.5;
+            var milk = new Topping("Milk", 0.5);
+            var sugar = new Topping("Sugar", 0.5);
 
-        public bool HasMilk { get; set; }
+            var jonsToppings = new List<Topping>() { milk, sugar };
+            var jonsDrink = helen.OrderDrink(tea, jonsToppings);
 
-        public bool HasSugar { get; set; }
-        public string Description { get; }
+            var robisToppings = new List<Topping>() { milk };
+            var robisDrink = helen.OrderDrink(tea, robisToppings);
 
-        public double Cost()
-        {
-            return 0;
-        }
+            helen.PrepareDrink(jonsDrink);
+            helen.PrepareDrink(robisDrink);
 
-        public void Prepare(string drink)
-        {
-            string message = "We are preparing the following drink for you: " + Description;
-            if (HasMilk)
-                message += "with milk";
-            else
-                message += "without milk";
+            helen.StopOrder(jonsDrink);
 
-            if (HasSugar)
-                message += "with sugar";
-            else
-                message += "without sugar";
-
-            Console.WriteLine(message);
-        }
-    }
-
-    public class Expresso : Drink
-    {
-        public new string Description
-        {
-            get { return "Expresso"; }
-        }
-
-        public new double Cost()
-        {
-            double cost = 1.8;
-
-            if (HasMilk)
-                cost += MilkCost;
-
-            if (HasSugar)
-                cost += SugarCost;
-
-            return cost;
-        }
-    }
-
-    public class Tea : Drink
-    {
-        public new string Description
-        {
-            get { return "Hot tea"; }
-        }
-
-        public new double Cost()
-        {
-            double cost = 1;
-
-            if (HasMilk)
-                cost += MilkCost;
-
-            if (HasSugar)
-                cost += SugarCost;
-
-            return cost;
-        }
-    }
-
-    public class IceTea : Drink
-    {
-        public new string Description
-        {
-            get { return "Ice tea"; }
-        }
-
-        public new double Cost()
-        {
-            double cost = 1.5;
-
-            if (HasMilk)
-                cost += MilkCost;
-
-            if (HasSugar)
-                cost += SugarCost;
-
-            return cost;
-        }
+            helen.ServeDrinkOrders();
+            Console.ReadLine();
+        }        
     }
 }

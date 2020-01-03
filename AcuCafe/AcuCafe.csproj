@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7BAB550C-1BDB-4E54-9BB1-5CC1FA75C5AE}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AcuCafe</RootNamespace>
     <AssemblyName>AcuCafe</AssemblyName>
@@ -29,6 +29,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,11 +44,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcuCafe.cs" />
+    <Compile Include="Barista.cs" />
+    <Compile Include="Drinks\Drink.cs" />
+    <Compile Include="Builders\DrinkBuilder.cs" />
+    <Compile Include="Drinks\DrinkType.cs" />
+    <Compile Include="Interfaces\IDrinkBuilder.cs" />
+    <Compile Include="Drinks\Topping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReadMe.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
