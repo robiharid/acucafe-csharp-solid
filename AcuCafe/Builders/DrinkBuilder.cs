@@ -2,10 +2,12 @@
 
 namespace AcuCafe.Drinks
 {
-    interface IDrinkBuilder
+    public interface IDrinkBuilder
     {
         void SetType(DrinkType type);
         void AddTopping(Topping topping);
+        Drink Build();
+        void init();
     }
 
     public class DrinkBuilder : IDrinkBuilder
@@ -14,6 +16,14 @@ namespace AcuCafe.Drinks
         private List<Topping> _toppings;
         private string _type;
         public DrinkBuilder()
+        {
+            _cost = 0;
+            _toppings = new List<Topping>();
+            _type = string.Empty;
+        }
+
+        // neccessary to reset DrinkBuilder if using DI to allow for tests
+        public void init() 
         {
             _cost = 0;
             _toppings = new List<Topping>();

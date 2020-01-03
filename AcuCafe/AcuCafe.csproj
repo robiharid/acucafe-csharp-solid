@@ -45,11 +45,10 @@
   <ItemGroup>
     <Compile Include="AcuCafe.cs" />
     <Compile Include="Services\Barista.cs" />
-    <Compile Include="Drinks\Drink.cs" />
+    <Compile Include="Core\Drink.cs" />
     <Compile Include="Builders\DrinkBuilder.cs" />
-    <Compile Include="Drinks\DrinkType.cs" />
-    <Compile Include="Interfaces\IDrinkBuilder.cs" />
-    <Compile Include="Drinks\Topping.cs" />
+    <Compile Include="Core\DrinkType.cs" />
+    <Compile Include="Core\Topping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

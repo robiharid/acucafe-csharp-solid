@@ -6,12 +6,20 @@ namespace AcuCafe
 {
     public class Barista
     {
-        private DrinkBuilder _drinkBuilder;
-        // orders are asking for logical queue
+        // could have passed in DrinkBuilder as argument to constructor to demonstrate DI, but not neccessary
+        // and would also mean the ctor is empty apart from builder assignment 
+        // Barista uses facade pattern
+        private IDrinkBuilder _drinkBuilder;
         private List<Drink> _customerOrders = new List<Drink>();
+
+        public Barista(IDrinkBuilder drinkBuilder)
+        {
+            _drinkBuilder = drinkBuilder;
+        }
         public Drink OrderDrink(DrinkType drinkType, List<Topping> toppings)
         {
-            _drinkBuilder = new DrinkBuilder();
+            _drinkBuilder.init();
+            // REMOVE _drinkBuilder = new DrinkBuilder();
             _drinkBuilder.SetType(drinkType);
 
             foreach(Topping topping in toppings)
@@ -40,5 +48,6 @@ namespace AcuCafe
             _customerOrders.Remove(incorrectDrink);
             Console.WriteLine($"Removing order: {incorrectDrink}");
         }
+
     }
 }

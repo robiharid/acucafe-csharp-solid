@@ -11,11 +11,14 @@ namespace AcuCafe
             // needs to consider if Type/Topping price changes i.e. tea becomes 2.0
             // might want to mislabel a customers name later on
 
+            // was goinng to restrict to only one topping of type milk but users can order extra milk 
+
             // would have typed Toppings and Drinks as Enum but we need to have flexibility adding and  
             // removing, stringly typed it is
 
             // would also wrap statements in tryc / finally or using blocks and add exception handling
-            Barista helen = new Barista();
+            DrinkBuilder drinkBuilder = new DrinkBuilder();
+            Barista helen = new Barista(drinkBuilder);
             var tea = new DrinkType("Tea", 1.5);
 
             var milk = new Topping("Milk", 0.5);
