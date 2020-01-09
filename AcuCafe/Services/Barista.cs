@@ -34,12 +34,17 @@ namespace AcuCafe
             _customerOrders.Add(drink);
         }
 
-        public void ServeDrinkOrders()
+        public List<Drink> ServeDrinkOrders()
         {
-            foreach (Drink order in  _customerOrders){
+            List<Drink> _finalOrders = new List<Drink>(_customerOrders);
+            _customerOrders.Clear(); //clear doesnt resize array, only frees up members for garb collect
+
+            // would remove this for debug, dont need side effects
+            foreach (Drink order in _finalOrders)
+            {
                 Console.WriteLine($"Serving order: {order.ToString()}");
             }
-            _customerOrders.Clear(); //clear doesnt resize array, only frees up members for garb collec
+            return _finalOrders;
         }
 
         public void StopOrder(Drink incorrectDrink)

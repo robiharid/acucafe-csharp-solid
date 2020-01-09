@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcuCafe", "AcuCafe\AcuCafe.csproj", "{7BAB550C-1BDB-4E54-9BB1-5CC1FA75C5AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcuCafeTests", "AcuCafeTests\AcuCafeTests.csproj", "{7921AF88-DC43-4472-87AE-AB1156CBE2EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{7BAB550C-1BDB-4E54-9BB1-5CC1FA75C5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BAB550C-1BDB-4E54-9BB1-5CC1FA75C5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BAB550C-1BDB-4E54-9BB1-5CC1FA75C5AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7921AF88-DC43-4472-87AE-AB1156CBE2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7921AF88-DC43-4472-87AE-AB1156CBE2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7921AF88-DC43-4472-87AE-AB1156CBE2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7921AF88-DC43-4472-87AE-AB1156CBE2EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98CAEA16-0A1F-469F-8787-EC5E58328B55}
 	EndGlobalSection
 EndGlobal

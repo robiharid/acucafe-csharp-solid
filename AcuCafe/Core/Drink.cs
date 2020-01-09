@@ -19,7 +19,8 @@ namespace AcuCafe.Drinks
 
         public override string ToString()
         {
-            return $"Drink (£{Cost.ToString("N2")}): {Type} with Toppings: {string.Join(", ", Toppings)}";
+            //return $"Drink (£{Cost.ToString("N2")}): {Type} with Toppings: {string.Join(", ", Toppings)}";
+            return $"Drink: {Type} with Toppings: {string.Join(", ", Toppings)}";
         }
 
     }
