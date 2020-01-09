@@ -56,7 +56,7 @@ namespace AcuCafeTests
             var completeDrinks = helen.ServeDrinkOrders();
 
 
-            Assert.AreNotEqual(completeDrinks, completeDrinks.Contains(robisDrinkIcedTea));
+            Assert.IsFalse(completeDrinks.Contains(robisDrinkIcedTea));
         }
     }
 }
